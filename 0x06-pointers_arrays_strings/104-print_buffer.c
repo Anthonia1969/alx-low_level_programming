@@ -28,25 +28,24 @@ void print_buffer(char *b, int size)
 			if (i < j)
 				printf("%02x", *(b + o + i));
 			else
-				printf(" ");
+				printf("  ");
 			if (i % 2)
 			{
 				printf(" ");
+			}
 		}
-	}
-	for (i = 0; i < j; i++)
-	{
-		int c = *(b + o + i);
-
-		if (c < 32 || c > 132)
+		for (i = 0; i < j; i++)
 		{
-			c = '.';
-		}
-		printf("%c", c);
-	}
-	printf("\n");
-	o += 10;
-}
-}
+			int c = *(b + o + i);
 
+			if (c < 32 || c > 132)
+			{
+				c = '.';
+			}
+			printf("%c", c);
+		}
+		printf("\n");
+		o += 10;
+	}
+}
 
